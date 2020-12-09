@@ -18,8 +18,8 @@ for i in range(preamblelen, len(data)):
         break
 
 for x in range(len(data)):
-    for i in range(len(data)-x):
-        segment = data[x:x+i+1]
+    for y in range(x+1,len(data)+1):
+        segment = data[x:y]
         if len(segment)>1 and sum(segment) == gevonden:
             print(min(segment)+max(segment))
                 
