@@ -1,13 +1,9 @@
-data = [int(x) for x in open('input.txt').read().splitlines() ]
+import numpy as np
+
+data = [int(x) for x in open('example.txt').read().splitlines() ]
 data.append(0)
 data.sort()
+data.append(data[-1]+3)
 
-enen = 0
-drieen = 1
-for i in range(1, len(data)):
-    diff = data[i] - data[i-1]
-    if (diff == 1):
-        enen = enen + 1
-    if (diff == 3):
-        drieen = drieen + 1
-print(enen * drieen)    
+diff = np.diff(data).tolist()
+print(diff.count(1) * diff.count(3))    

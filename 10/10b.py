@@ -5,9 +5,7 @@ data.append(0)
 data.append(max(data)+3)
 data.sort()
 
-diff = []
-for i in range(1, len(data)):
-    diff.append(data[i] - data[i-1])
+diff = np.diff(data).tolist()
 
 pipo = [0,0,2,4,7]
 
