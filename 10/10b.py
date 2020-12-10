@@ -18,7 +18,7 @@ while i<len(diff)-1:
         if diff[j] == 3:
             if j - i > 1:
                 reeks.append(pipo[j - i])
-                i = i + j - i - 1
+                i = j - 1
             break;
     i = i + 1
 print(np.prod(reeks))
