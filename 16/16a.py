@@ -8,12 +8,11 @@ rr = []
 
 rng = blocks[0].splitlines()
 for r in rng:
-    g = prog.match(r).groups()
-    rr = rr + list(range(int(g[0]),int(g[1])+1))
-    rr = rr + list(range(int(g[2]),int(g[3])+1))
+    g = list(map(int, prog.match(r).groups()))
+    rr = rr + list(range(g[0],g[1]+1))
+    rr = rr + list(range(g[2],g[3]+1))
 
-nb = blocks[2].replace('nearby tickets:\n','').replace('\n',',').rstrip(',').split(',')
-nearby = [int(x) for x in nb]
+nearby = list(map(int, blocks[2].replace('nearby tickets:\n','').replace('\n',',').rstrip(',').split(',')))
 
 nn = []
 for n in nearby:
