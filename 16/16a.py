@@ -14,9 +14,5 @@ for r in rng:
 
 nearby = list(map(int, blocks[2].replace('nearby tickets:\n','').replace('\n',',').rstrip(',').split(',')))
 
-nn = []
-for n in nearby:
-    if n not in rr:
-        nn.append(n)
-
+nn = [ n for n in nearby if n not in rr ]
 print(sum(nn))
